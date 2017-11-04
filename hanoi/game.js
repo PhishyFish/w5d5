@@ -41,33 +41,32 @@ class Game {
 
   getInput () {
     let start, end;
-    reader.question('Pick a start and end: ', function(res) {
+    reader.question('Pick a start and end: ', (res) => {
       //object = Game
       //argument = res
       //function = parseInput
       // parseInput.bind()
       // this.handleInput(this.parseInput(res));
-      let start = res[0];
-      let end = res[res.length - 1];
-      this.moveDisc(start, end);
+      start = res[0];
+      end = res[res.length - 1];
       // return [start, end];
+      this.moveDisc(start, end);
     });
   }
 
-  parseInput(input) {
-    let start = input[0];
-    let end = input[input.length - 1];
-    return [start, end];
-  }
-
-  handleInput (move) {
-    this.moveDisc(move[0], move[1]);
-  }
+  // parseInput(input) {
+  //   let start = input[0];
+  //   let end = input[input.length - 1];
+  //   return [start, end];
+  // }
+  //
+  // handleInput (move) {
+  //   this.moveDisc(move[0], move[1]);
+  // }
 }
 const game = new Game();
 
-const getInput = function() {
 
-};
+// const boundInputFunction = handleInput.bind(game)
 
 // const boundGetInput =
